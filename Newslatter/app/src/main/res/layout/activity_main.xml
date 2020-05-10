@@ -14,6 +14,12 @@
         android:layout_marginTop="20dp"
         android:hint="@string/name_hint" />
 
+    <TextView
+        android:id="@+id/error_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="colorRed" />
+
     <EditText
         android:id="@+id/edit_email"
         android:layout_width="match_parent"
@@ -21,6 +27,26 @@
         android:layout_marginTop="20dp"
         android:hint="@string/email_hint"
         android:inputType="textEmailAddress" />
+
+    <TextView
+        android:id="@+id/error_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="colorRed" />
+
+    <EditText
+        android:id="@+id/edit_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="@string/password_hint"
+        android:inputType="textPassword" />
+
+    <TextView
+        android:id="@+id/error_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="colorRed" />
 
     <RadioGroup
         android:id="@+id/radio_group"
