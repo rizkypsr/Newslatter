@@ -6,21 +6,29 @@
     android:orientation="vertical"
     tools:context="com.bitlabs.newsletter.activities.ProfileActivity">
 
+    <ImageView
+        android:id="@+id/img_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp" />
+
     <TextView
         android:id="@+id/user_profile_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:gravity="center"
-        android:textSize="30sp" />
+        android:layout_gravity="center"
+        android:textSize="24sp"
+        tools:text="Name" />
 
     <TextView
         android:id="@+id/user_profile_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:gravity="center"
-        android:textSize="30sp" />
+        android:layout_gravity="center"
+        android:textSize="18sp"
+        tools:text="Email" />
 
 
 </LinearLayout>
