@@ -1,8 +1,9 @@
-package com.bitlabs.newsletter
+package com.bitlabs.newsletter.activities
 
 import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.bitlabs.newsletter.R
 import kotlinx.android.synthetic.main.activity_profile.*
 
 class ProfileActivity : AppCompatActivity() {

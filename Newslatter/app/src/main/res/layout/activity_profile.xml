@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.bitlabs.newsletter.ProfileActivity">
+    tools:context="com.bitlabs.newsletter.activities.ProfileActivity">
 
     <TextView
         android:id="@+id/user_profile_name"

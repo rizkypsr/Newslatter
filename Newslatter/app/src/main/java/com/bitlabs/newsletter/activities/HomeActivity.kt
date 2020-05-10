@@ -1,10 +1,12 @@
-package com.bitlabs.newsletter
+package com.bitlabs.newsletter.activities
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import com.bitlabs.newsletter.MainActivity
+import com.bitlabs.newsletter.R
 
 class HomeActivity : AppCompatActivity() {
 
