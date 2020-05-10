@@ -1,5 +1,6 @@
 package com.bitlabs.newsletter
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Patterns
 import android.widget.Toast
@@ -20,6 +21,8 @@ class MainActivity : AppCompatActivity() {
     fun validateForm() {
         if (validateName() && validateEmail() && validatePassword() && validateGender()) {
             Toast.makeText(this@MainActivity, "Success", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
         }
     }
 
