@@ -1,4 +1,4 @@
-package com.bitlabs.newslatter
+package com.bitlabs.newsletter
 
 import android.os.Bundle
 import android.util.Patterns

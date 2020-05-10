@@ -1,4 +1,4 @@
-package com.bitlabs.newslatter
+package com.bitlabs.newsletter
 
 import org.junit.Assert.assertEquals
 import org.junit.Test
