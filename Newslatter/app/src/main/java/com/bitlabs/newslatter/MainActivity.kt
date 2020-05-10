@@ -34,4 +34,14 @@ class MainActivity : AppCompatActivity() {
             return true
         }
     }
+
+    fun validateGender(): Boolean {
+        if (radio_group.checkedRadioButtonId == -1) {
+            error_gender.text = "Gender must be selected"
+            return false
+        } else {
+            error_gender.text = null
+            return true
+        }
+    }
 }
