@@ -1,6 +1,7 @@
 package com.bitlabs.newsletter
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Patterns
 import android.widget.Toast
@@ -9,9 +10,15 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+    private val PRIVATE_MODE = 0
+    private val PREF_NAME = "bitlabs"
+    private var sharedPref: SharedPreferences? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        sharedPref = this.getSharedPreferences(PREF_NAME, PRIVATE_MODE)
 
         btn_submit.setOnClickListener {
             validateForm()
@@ -22,6 +29,11 @@ class MainActivity : AppCompatActivity() {
         if (validateName() && validateEmail() && validatePassword() && validateGender()) {
             Toast.makeText(this@MainActivity, "Success", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, HomeActivity::class.java)
+            val editor = sharedPref?.edit()
+
+            editor?.putString("user-name", edit_name.text.toString())
+            editor?.putString("user-email", edit_email.text.toString())
+            editor?.apply()
             startActivity(intent)
         }
     }
