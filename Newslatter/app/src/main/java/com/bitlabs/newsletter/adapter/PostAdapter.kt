@@ -22,5 +22,6 @@ class PostAdapter(val items: ArrayList<Post>, val context: Context) :
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         holder.title.text = items[position].title
         holder.body.text = items[position].detail
+        holder.date.text = items[position].date
     }
 }
