@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun validateForm() {
+    private fun validateForm() {
         if (validateName() && validateEmail() && validatePassword() && validateGender()) {
             Toast.makeText(this@MainActivity, "Success", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, HomeActivity::class.java)
@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun validateName(): Boolean {
+    private fun validateName(): Boolean {
         if (edit_name.text.isEmpty()) {
             error_name.text = "Name must be filled"
             return false
@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun validateEmail(): Boolean {
+    private fun validateEmail(): Boolean {
         if (edit_email.text.isEmpty()) {
             error_email.text = "Email must be filled"
             return false
@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun validatePassword(): Boolean {
+    private fun validatePassword(): Boolean {
         if (edit_password.text.isEmpty()) {
             error_password.text = "Password must be filled"
             return false
@@ -62,7 +62,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun validateGender(): Boolean {
+    private fun validateGender(): Boolean {
         if (radio_group.checkedRadioButtonId == -1) {
             error_gender.text = "Gender must be selected"
             return false
