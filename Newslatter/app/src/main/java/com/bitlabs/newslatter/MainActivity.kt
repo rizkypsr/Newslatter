@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun validateName(): Boolean {
-        if (edit_name.text.length == 0) {
+        if (edit_name.text.isEmpty()) {
             error_name.text = "Name must be filled"
             return false
         } else {
