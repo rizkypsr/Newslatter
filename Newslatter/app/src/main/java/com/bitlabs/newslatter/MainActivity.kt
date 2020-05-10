@@ -35,6 +35,19 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    fun validatePassword(): Boolean {
+        if (edit_password.text.isEmpty()) {
+            error_password.text = "Password must be filled"
+            return false
+        } else if (edit_password.text.length < 8) {
+            error_password.text = "Password must be 7 characters or longer"
+            return false
+        } else {
+            error_password.text = null
+            return true
+        }
+    }
+
     fun validateGender(): Boolean {
         if (radio_group.checkedRadioButtonId == -1) {
             error_gender.text = "Gender must be selected"
@@ -44,4 +57,6 @@ class MainActivity : AppCompatActivity() {
             return true
         }
     }
+
+
 }
