@@ -2,6 +2,7 @@ package com.bitlabs.newslatter
 
 import android.os.Bundle
 import android.util.Patterns
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -10,6 +11,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+    }
+
+    fun validateForm() {
+        if (validateName() && validateEmail() && validatePassword() && validateGender()) {
+            Toast.makeText(this@MainActivity, "Success", Toast.LENGTH_SHORT).show()
+        }
     }
 
     fun validateName(): Boolean {
