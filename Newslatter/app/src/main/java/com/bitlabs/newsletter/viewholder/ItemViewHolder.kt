@@ -6,6 +6,7 @@ import kotlinx.android.synthetic.main.list_item.view.*
 
 class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
+    val id: Int = 0
     val title = itemView.title
     val body = itemView.body
     val date = itemView.date
