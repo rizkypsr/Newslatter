@@ -47,6 +47,16 @@ class NewsletterDBHelper(context: Context) :
 
     }
 
+    fun updateNews(news: Post, id: Int) {
+        val values = ContentValues()
+        values.put(COLUMN_TITLE, news.title)
+        values.put(COLUMN_BODY, news.detail)
+        values.put(COLUMN_DATE, news.date)
+
+        val db = this.writableDatabase
+        db.update(TABLE_NAME, values, "_id = $id", null)
+    }
+
     fun getAllNews(): ArrayList<Post> {
         val listNews = ArrayList<Post>()
         val query = "SELECT * FROM $TABLE_NAME"
