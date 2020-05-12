@@ -1,8 +1,10 @@
 package com.bitlabs.newsletter.helper
 
+import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import com.bitlabs.newsletter.model.Post
 
 class NewsletterDBHelper(context: Context) :
     SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
@@ -31,5 +33,17 @@ class NewsletterDBHelper(context: Context) :
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
         db?.execSQL("DROP TABLE IF EXISTs $TABLE_NAME")
         onCreate(db)
+    }
+
+    fun insertNews(news: Post) {
+        val values = ContentValues()
+        values.put(COLUMN_TITLE, news.title)
+        values.put(COLUMN_BODY, news.detail)
+        values.put(COLUMN_DATE, news.date)
+
+        val db = this.writableDatabase
+        db.insert(TABLE_NAME, null, values)
+        db.close()
+
     }
 }
