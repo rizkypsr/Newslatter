@@ -12,4 +12,5 @@
     <string name="insert_title">Title</string>
     <string name="title">Title</string>
     <string name="body">Body</string>
+    <string name="create_news">Create News</string>
 </resources>
