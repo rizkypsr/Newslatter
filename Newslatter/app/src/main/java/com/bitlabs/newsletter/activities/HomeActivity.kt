@@ -22,13 +22,7 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        initData()
         iniRecyclerView()
-    }
-
-    private fun initData() {
-        listPost.add(Post("Android 10", "Android meluncurkan 0S terbaru", "20 Jun 2019"))
-        listPost.add(Post("Kebocoran Gas", "Kebocoran gas di lampung", "10 May 2019"))
     }
 
     private fun iniRecyclerView() {
