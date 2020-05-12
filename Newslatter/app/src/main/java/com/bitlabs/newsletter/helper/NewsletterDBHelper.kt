@@ -64,7 +64,12 @@ class NewsletterDBHelper(context: Context) :
         val cursor = db.rawQuery(query, null)
         if (cursor.moveToFirst()) {
             do {
-                val news = Post(cursor.getString(1), cursor.getString(2), cursor.getString(3))
+                val news = Post(
+                    cursor.getInt(0),
+                    cursor.getString(1),
+                    cursor.getString(2),
+                    cursor.getString(3)
+                )
                 listNews.add(news)
             } while (cursor.moveToNext())
         }
