@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bitlabs.newsletter.MainActivity
 import com.bitlabs.newsletter.R
 import com.bitlabs.newsletter.adapter.PostAdapter
+import com.bitlabs.newsletter.helper.NewsletterDBHelper
 import com.bitlabs.newsletter.model.Post
 
 class HomeActivity : AppCompatActivity() {
@@ -25,14 +26,15 @@ class HomeActivity : AppCompatActivity() {
         iniRecyclerView()
     }
 
-    fun initData() {
+    private fun initData() {
         listPost.add(Post("Android 10", "Android meluncurkan 0S terbaru", "20 Jun 2019"))
         listPost.add(Post("Kebocoran Gas", "Kebocoran gas di lampung", "10 May 2019"))
     }
 
-    fun iniRecyclerView() {
+    private fun iniRecyclerView() {
+        val db = NewsletterDBHelper(this)
         val rView = findViewById<RecyclerView>(R.id.recycler_view)
-        val adapter = PostAdapter(listPost, this)
+        val adapter = PostAdapter(db.getAllNews(), this)
         rView.layoutManager = LinearLayoutManager(this)
         rView.addItemDecoration(DividerItemDecoration(this, LinearLayoutManager.VERTICAL))
         rView.adapter = adapter
