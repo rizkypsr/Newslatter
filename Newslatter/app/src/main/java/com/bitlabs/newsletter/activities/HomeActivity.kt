@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bitlabs.newsletter.CreateNewsActivity
 import com.bitlabs.newsletter.MainActivity
 import com.bitlabs.newsletter.R
 import com.bitlabs.newsletter.adapter.PostAdapter
@@ -45,6 +46,11 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
+            R.id.menu_create -> {
+                val intent = Intent(this@HomeActivity, CreateNewsActivity::class.java)
+                startActivity(intent)
+                true
+            }
             R.id.menu_profile -> {
                 val intent = Intent(this@HomeActivity, ProfileActivity::class.java)
                 startActivity(intent)
