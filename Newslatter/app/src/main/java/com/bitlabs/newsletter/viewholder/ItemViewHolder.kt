@@ -9,4 +9,5 @@ class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     val title = itemView.title
     val body = itemView.body
     val date = itemView.date
+    val btnUpdate = itemView.btn_update
 }
