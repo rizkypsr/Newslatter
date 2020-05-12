@@ -21,6 +21,14 @@
         android:text="Body" />
 
     <TextView
+        android:id="@+id/btn_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/body"
+        android:text="@string/delete"
+        android:textColor="@color/colorAccent" />
+
+    <TextView
         android:id="@+id/date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

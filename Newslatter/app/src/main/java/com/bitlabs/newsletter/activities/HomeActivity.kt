@@ -12,11 +12,8 @@ import com.bitlabs.newsletter.MainActivity
 import com.bitlabs.newsletter.R
 import com.bitlabs.newsletter.adapter.PostAdapter
 import com.bitlabs.newsletter.helper.NewsletterDBHelper
-import com.bitlabs.newsletter.model.Post
 
 class HomeActivity : AppCompatActivity() {
-
-    private val listPost = ArrayList<Post>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
