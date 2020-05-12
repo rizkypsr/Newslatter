@@ -46,4 +46,19 @@ class NewsletterDBHelper(context: Context) :
         db.close()
 
     }
+
+    fun getAllNews(): ArrayList<Post> {
+        val listNews = ArrayList<Post>()
+        val query = "SELECT * FROM $TABLE_NAME"
+        val db = this.readableDatabase
+        val cursor = db.rawQuery(query, null)
+        if (cursor.moveToFirst()) {
+            do {
+                val news = Post(cursor.getString(1), cursor.getString(2), cursor.getString(3))
+                listNews.add(news)
+            } while (cursor.moveToNext())
+        }
+        db.close()
+        return listNews
+    }
 }
