@@ -1,6 +1,8 @@
 package com.bitlabs.newsletter.activities
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.bitlabs.newsletter.R
 import com.bitlabs.newsletter.helper.NewsletterDBHelper
@@ -12,6 +14,13 @@ class CreateNewsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_news)
+
+        btn_insert.setOnClickListener {
+            insertNews()
+            Toast.makeText(this, "Success Insert Data", Toast.LENGTH_SHORT)
+            val intent = Intent(this@CreateNewsActivity, HomeActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     fun insertNews() {
