@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="30dp"
-    tools:context="com.bitlabs.newsletter.CreateNewsActivity">
+    tools:context="com.bitlabs.newsletter.activities.CreateNewsActivity">
 
     <TextView
         android:id="@+id/title_create"

@@ -8,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.bitlabs.newsletter.CreateNewsActivity
 import com.bitlabs.newsletter.MainActivity
 import com.bitlabs.newsletter.R
 import com.bitlabs.newsletter.adapter.PostAdapter
