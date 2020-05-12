@@ -4,7 +4,7 @@ import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import com.bitlabs.newsletter.model.Post
+import com.bitlabs.newsletter.model.News
 
 class NewsletterDBHelper(context: Context) :
     SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
@@ -35,10 +35,10 @@ class NewsletterDBHelper(context: Context) :
         onCreate(db)
     }
 
-    fun insertNews(news: Post) {
+    fun insertNews(news: News) {
         val values = ContentValues()
         values.put(COLUMN_TITLE, news.title)
-        values.put(COLUMN_BODY, news.detail)
+        values.put(COLUMN_BODY, news.body)
         values.put(COLUMN_DATE, news.date)
 
         val db = this.writableDatabase
@@ -47,29 +47,34 @@ class NewsletterDBHelper(context: Context) :
 
     }
 
-    fun updateNews(news: Post, id: Int) {
+    fun updateNews(news: News, id: Int) {
         val values = ContentValues()
         values.put(COLUMN_TITLE, news.title)
-        values.put(COLUMN_BODY, news.detail)
+        values.put(COLUMN_BODY, news.body)
         values.put(COLUMN_DATE, news.date)
 
         val db = this.writableDatabase
         db.update(TABLE_NAME, values, "_id = $id", null)
     }
 
-    fun getAllNews(): ArrayList<Post> {
-        val listNews = ArrayList<Post>()
+    fun deleteNews(id: Int) {
+        val db = this.writableDatabase
+        db.delete(TABLE_NAME, "_id = $id", null)
+    }
+
+    fun getAllNews(): ArrayList<News> {
+        val listNews = ArrayList<News>()
         val query = "SELECT * FROM $TABLE_NAME"
         val db = this.readableDatabase
         val cursor = db.rawQuery(query, null)
         if (cursor.moveToFirst()) {
             do {
-                val news = Post(
-                    cursor.getInt(0),
+                val news = News(
                     cursor.getString(1),
                     cursor.getString(2),
                     cursor.getString(3)
                 )
+                news.id = cursor.getInt(0)
                 listNews.add(news)
             } while (cursor.moveToNext())
         }
