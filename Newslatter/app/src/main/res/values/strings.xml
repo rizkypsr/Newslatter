@@ -9,4 +9,7 @@
     <string name="password_hint">Password</string>
     <string name="profile">Profile</string>
     <string name="logout">Logout</string>
+    <string name="insert_title">Title</string>
+    <string name="title">Title</string>
+    <string name="body">Body</string>
 </resources>
